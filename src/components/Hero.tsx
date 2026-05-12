@@ -38,38 +38,35 @@ export default function Hero() {
         <div>
           <motion.div {...fade(0.1)} style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--ink-2)", fontWeight: 700, fontSize: 14, marginBottom: 14 }}>
             <span style={{ width: 26, height: 26, backgroundImage: "url(/assets/sparkle_green.png)", backgroundSize: "contain", backgroundRepeat: "no-repeat", display: "inline-block" }} />
-            最新AIを自在に操る
+            Creator × Researcher × Engineer
           </motion.div>
 
           <motion.h1 {...fade(0.2)} style={{ fontWeight: 900, fontSize: 62, lineHeight: 1.18, letterSpacing: "-.01em", margin: "0 0 18px" }}>
-            爆速の
+            妥協なき
             <span style={{ color: "var(--blue)", position: "relative", display: "inline-block", padding: "0 4px" }}>
-              実装力
+              創作
               <span style={{ position: "absolute", left: 0, right: 0, bottom: 6, height: 10, background: "rgba(38,185,235,.18)", zIndex: -1, borderRadius: 3, display: "block" }} />
             </span>
-            で、<br />
-            アイデアを
+            のために、<br />
             <span style={{ color: "var(--lime-2)", position: "relative", display: "inline-block", padding: "0 4px" }}>
-              価値
+              技術
               <span style={{ position: "absolute", left: 0, right: 0, bottom: 6, height: 10, background: "rgba(164,214,28,.22)", zIndex: -1, borderRadius: 3, display: "block" }} />
             </span>
-            に変える。
+            を磨く。
           </motion.h1>
 
           <motion.div {...fade(0.3)} style={{ display: "flex", alignItems: "center", gap: 14, color: "var(--ink)", fontWeight: 700, fontSize: 15.5, background: "#fff", border: "1px solid var(--line)", borderRadius: 14, padding: "12px 18px", width: "fit-content", boxShadow: "0 6px 18px -12px rgba(15,27,45,.18)" }}>
             <span style={{ width: 18, height: 18, borderRadius: "50%", border: "2px solid var(--blue)", position: "relative", flexShrink: 0, display: "inline-block" }}>
               <span style={{ position: "absolute", top: 2, left: 6, width: 2, height: 6, background: "var(--blue)", display: "block" }} />
             </span>
-            国際会議に裏打ちされた研究実績
-            <span style={{ color: "var(--blue)", margin: "0 4px" }}>×</span>
-            実践的な開発力
+            AI個人開発、ピクセルアート研究、現場のDX。<br />{'"最高傑作"'}を作るための三軸。
           </motion.div>
 
           <motion.div {...fade(0.4)} style={{ display: "flex", gap: 14, marginTop: 20, flexWrap: "wrap" }}>
             {[
-              { dot: "b", label: "AI Engineering", letter: "A" },
-              { dot: "l", label: "Front-end Development", letter: "F" },
-              { dot: "p", label: "Research & R&D", letter: "R" },
+              { dot: "b", label: "AI Development", letter: "A" },
+              { dot: "l", label: "Pixel Art Research", letter: "P" },
+              { dot: "p", label: "Indie Creation", letter: "I" },
             ].map(({ dot, label, letter }) => (
               <span key={label} style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "10px 18px", borderRadius: 999, background: "#fff", border: "1px solid var(--line)", fontWeight: 700, fontSize: 13.5, color: "var(--ink)", boxShadow: "0 4px 14px -10px rgba(15,27,45,.25)" }}>
                 <span style={{
@@ -83,8 +80,8 @@ export default function Hero() {
 
           <motion.div {...fade(0.5)} style={{ marginTop: 34, background: "var(--code-bg)", color: "#cfe6ff", fontFamily: "var(--font-mono), monospace", fontSize: 13.5, lineHeight: 1.85, padding: "18px 22px", borderRadius: 14, boxShadow: "0 16px 40px -22px rgba(15,27,45,.55)", position: "relative", maxWidth: 560 }}>
             <span style={{ position: "absolute", top: 14, right: 14, width: 30, height: 30, borderRadius: 9, background: "linear-gradient(180deg,#5cd0f0,#26b9eb)", display: "grid", placeItems: "center", color: "#fff", fontWeight: 900, fontSize: 13 }}>&lt;/&gt;</span>
-            <div><span style={{ color: "#ff8aa6" }}>const</span> <span style={{ color: "#9bd4ff" }}>mission</span> = <span style={{ color: "#b5e639" }}>{`'技術で、未来の当たり前を創る'`}</span>;</div>
-            <div><span style={{ color: "#ff8aa6" }}>let</span> <span style={{ color: "#9bd4ff" }}>speed</span> = <span style={{ color: "#b5e639" }}>{`'爆速'`}</span>; <span style={{ color: "#7c8aa3" }}>{"// アイデアを即、プロダクトへ"}</span></div>
+            <div><span style={{ color: "#ff8aa6" }}>const</span> <span style={{ color: "#9bd4ff" }}>mission</span> = <span style={{ color: "#b5e639" }}>{`'妥協なき最高傑作を、世に送り出す'`}</span>;</div>
+            <div><span style={{ color: "#ff8aa6" }}>let</span> <span style={{ color: "#9bd4ff" }}>craft</span> = <span style={{ color: "#b5e639" }}>{`'徹底的に'`}</span>; <span style={{ color: "#7c8aa3" }}>{"// 細部まで作り込む"}</span></div>
           </motion.div>
         </div>
 
@@ -97,17 +94,17 @@ export default function Hero() {
 
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
             style={{ position: "absolute", top: 32, right: -10, zIndex: 3, background: "#fff", border: "1px solid var(--line)", borderRadius: 18, padding: "14px 18px", fontWeight: 700, fontSize: 14, lineHeight: 1.6, boxShadow: "0 10px 22px -16px rgba(15,27,45,.35)" }}>
-            AIと共に、<br />未来を<span style={{ color: "var(--purple)" }}>爆速</span>で。
+            創作と技術の<br />交差点で、<span style={{ color: "var(--purple)" }}>ものをつくる</span>。
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.9 }}
             style={{ position: "absolute", right: -10, bottom: 80, zIndex: 3, width: 240, background: "#fff", border: "1px solid var(--line)", borderRadius: 18, padding: "16px 18px", boxShadow: "0 18px 40px -24px rgba(15,27,45,.35)" }}>
-            <h4 style={{ margin: "0 0 4px", fontSize: 14, fontWeight: 800 }}>AI Engineer / Researcher</h4>
-            <div style={{ color: "var(--muted)", fontSize: 11.5, marginBottom: 10 }}>大学院 修士課程</div>
+            <h4 style={{ margin: "0 0 4px", fontSize: 14, fontWeight: 800 }}>AI Engineer / Creator / Researcher</h4>
+            <div style={{ color: "var(--muted)", fontSize: 11.5, marginBottom: 10 }}>情報系学部 学部2年</div>
             <p style={{ margin: 0, fontSize: 12, lineHeight: 1.7, color: "var(--ink-2)" }}>
-              好きなもの：技術 · 挑戦 · スピード<br />
-              得意なこと：AI活用 · 高速実装 · 研究<br />
-              モットー：まず作る、すぐ良くする！
+              好きなもの：創作 · ピクセルアート · 細部へのこだわり<br />
+              得意なこと：AI個人開発 · 研究 · 課題解決<br />
+              モットー：作るなら、妥協しない。
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 12, paddingTop: 12, borderTop: "1px solid var(--line)" }}>
               {["G", "X", "in"].map((s, i) => (
