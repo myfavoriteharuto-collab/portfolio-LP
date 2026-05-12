@@ -21,7 +21,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "AI × Code × Research — Portfolio",
+  title: "Haruto Miyakawa | AI Engineer",
   description: "爆速の実装力で、アイデアを価値に変える。AI Engineer / Researcher のポートフォリオ。",
 };
 
