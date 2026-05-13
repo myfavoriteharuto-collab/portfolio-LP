@@ -60,7 +60,8 @@ export default function ProjectModal({ project, onClose }: Props) {
               style={{ position: "fixed", inset: 0, background: "rgba(15,27,45,.55)", backdropFilter: "blur(4px)", zIndex: 100 }}
             />
 
-            {/* Window */}
+            {/* Window - outer div handles centering, inner motion handles animation */}
+            <div key="modal-wrapper" style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 101, width: "min(680px, 92vw)" }}>
             <motion.div
               key="modal"
               initial={{ opacity: 0, scale: 0.82, y: 40 }}
@@ -68,8 +69,6 @@ export default function ProjectModal({ project, onClose }: Props) {
               exit={{ opacity: 0, scale: 0.88, y: 20 }}
               transition={{ type: "spring", stiffness: 340, damping: 26 }}
               style={{
-                position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)",
-                zIndex: 101, width: "min(680px, 92vw)",
                 maxHeight: "90vh",
                 background: "#fff",
                 borderRadius: 24,
@@ -159,6 +158,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 </div>
               </div>
             </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>
