@@ -37,6 +37,7 @@ export default function SectionShell({
           padding: "50px 48px",
           margin: "24px 0",
           boxShadow: "0 30px 60px -50px rgba(15,27,45,.25)",
+          scrollMarginTop: "80px",
         }}
       >
         <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 40, alignItems: "start" }}>
