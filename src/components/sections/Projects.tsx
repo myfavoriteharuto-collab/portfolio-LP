@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import SectionShell from "@/components/ui/SectionShell";
 import ProjectModal, { Project } from "@/components/ui/ProjectModal";
@@ -49,6 +49,13 @@ const tagGrad = {
 
 export default function Projects() {
   const [selected, setSelected] = useState<Project | null>(null);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setLightboxSrc(null); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
 
   return (
     <>
@@ -79,8 +86,11 @@ export default function Projects() {
                 {p.screenshots ? (
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 10 }}>
                     {p.screenshots.map(s => (
-                      <div key={s.src}>
-                        <Image src={s.src} alt={s.caption} width={600} height={338} style={{ width: "100%", height: "auto", borderRadius: 8, border: "1px solid var(--line)" }} />
+                      <div key={s.src}
+                        onClick={(e) => { e.stopPropagation(); setLightboxSrc(s.src); }}
+                        style={{ cursor: "zoom-in" }}
+                      >
+                        <Image src={s.src} alt={s.caption} width={600} height={338} style={{ width: "100%", height: "auto", borderRadius: 8, border: "1px solid var(--line)", display: "block" }} />
                         <p style={{ margin: "4px 0 0", fontSize: 9.5, color: "var(--ink-2)", textAlign: "center", lineHeight: 1.4 }}>{s.caption}</p>
                       </div>
                     ))}
@@ -113,6 +123,32 @@ export default function Projects() {
         }
       />
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
+
+      {/* Card-level lightbox */}
+      <AnimatePresence>
+        {lightboxSrc && (
+          <>
+            <motion.div
+              key="card-lb-bg"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setLightboxSrc(null)}
+              style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.88)", backdropFilter: "blur(8px)", zIndex: 200 }}
+            />
+            <motion.div
+              key="card-lb-img"
+              initial={{ opacity: 0, scale: 0.88 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.88 }}
+              transition={{ type: "spring", stiffness: 340, damping: 28 }}
+              onClick={() => setLightboxSrc(null)}
+              style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%,-50%)", zIndex: 201, width: "min(960px, 94vw)", cursor: "zoom-out" }}
+            >
+              <Image src={lightboxSrc} alt="" width={1920} height={1080}
+                style={{ width: "100%", height: "auto", borderRadius: 14, boxShadow: "0 40px 80px rgba(0,0,0,.6)", display: "block" }}
+              />
+              <p style={{ textAlign: "center", color: "rgba(255,255,255,.5)", fontSize: 11.5, marginTop: 12, letterSpacing: ".1em" }}>クリックで閉じる · ESC</p>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
