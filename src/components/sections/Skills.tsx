@@ -21,10 +21,10 @@ export default function Skills() {
     <SectionShell
       id="skills" num="04" title="スキル・市場価値" kicker="SKILLS & MARKET VALUE"
       lead={<>実際に使ってきた技術と、<br />現在進行形の活動。</>}
-      ctaLabel="View more" ctaVariant="lime"
+      ctaLabel="LAPRASで見る" ctaHref="https://lapras.com/public/haruto-miyakawa" ctaExternal ctaVariant="lime"
       decorRight={<Image src="/assets/arrow_curve.png" alt="" width={80} height={40} style={{ position: "absolute", right: -10, top: "40%", opacity: 0.8, pointerEvents: "none" }} />}
       sidebar={
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+        <div className="layout-2col">
           {/* Tech stack */}
           <motion.div
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

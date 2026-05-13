@@ -17,10 +17,10 @@ export default function Research() {
     <SectionShell
       id="research" num="02" title="研究実績" kicker="RESEARCH"
       lead={<>学部1年次より国際会議での<br />共同研究に参加。AIと自然言語<br />処理の研究実装を経験。</>}
-      ctaLabel="View more" ctaVariant="lime"
+      ctaLabel="論文を読む" ctaHref="https://www.computer.org/csdl/proceedings-article/iiai-aai-winter/2025/932000a203/2eP1ndhvMeA" ctaExternal ctaVariant="lime"
       decorLeft={<Image src="/assets/sparkle_purple.png" alt="" width={30} height={30} style={{ position: "absolute", left: 30, top: 60, pointerEvents: "none" }} />}
       sidebar={
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 18 }}>
+        <div className="layout-2col">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

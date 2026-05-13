@@ -64,11 +64,11 @@ export default function Projects() {
       <SectionShell
         id="projects" num="01" title="開発実績" kicker="PROJECTS"
         lead={<>現場の課題発見から、AI活用、<br />設計、実装まで。すべてを<br />妥協なく作り込んだプロダクト。</>}
-        ctaLabel="View more" ctaVariant="blue"
+        ctaLabel="GitHubで見る" ctaHref="https://github.com/myfavoriteharuto-collab" ctaExternal ctaVariant="blue"
         decorLeft={<Image src="/assets/dots.png" alt="" width={90} height={90} style={{ position: "absolute", left: -60, top: 30, opacity: 0.45, pointerEvents: "none" }} />}
         decorRight={<Image src="/assets/sparkle_green.png" alt="" width={30} height={30} style={{ position: "absolute", right: 20, bottom: 90, pointerEvents: "none" }} />}
         sidebar={
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 18 }}>
+          <div className="layout-2col">
             {projects.map((p, i) => (
               <motion.div
                 key={p.id}

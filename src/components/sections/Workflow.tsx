@@ -16,11 +16,11 @@ export default function Workflow() {
     <SectionShell
       id="workflow" num="03" title="AI共創ワークフロー" kicker="WORKFLOW"
       lead={<>AIを"相棒"として、細部まで<br />妥協せず作り込む。</>}
-      ctaLabel="View more" ctaVariant="blue"
+      ctaVariant="blue"
       sidebar={
         <div>
           {/* Steps */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 8, alignItems: "start", marginTop: 10 }}>
+          <div className="layout-5col">
             {steps.map((s, i) => (
               <motion.div
                 key={s.num}

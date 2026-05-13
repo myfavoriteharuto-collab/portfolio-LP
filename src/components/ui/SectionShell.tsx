@@ -10,6 +10,7 @@ interface Props {
   lead: ReactNode;
   ctaLabel?: string;
   ctaHref?: string;
+  ctaExternal?: boolean;
   ctaVariant?: "blue" | "lime";
   sidebar: ReactNode;
   decorLeft?: ReactNode;
@@ -17,30 +18,27 @@ interface Props {
 }
 
 export default function SectionShell({
-  id, num, title, kicker, lead, ctaLabel, ctaHref = "#", ctaVariant = "blue",
+  id, num, title, kicker, lead, ctaLabel, ctaHref = "#", ctaExternal = false, ctaVariant = "blue",
   sidebar, decorLeft, decorRight,
 }: Props) {
   return (
-    <div className="relative" style={{ maxWidth: 1180, margin: "0 auto", padding: "0 32px" }}>
+    <div className="relative section-shell-outer">
       {decorLeft}
       {decorRight}
       <motion.section
         id={id}
+        className="section-shell-inner"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
         style={{
-          position: "relative",
           background: "#fff",
-          borderRadius: 28,
-          padding: "50px 48px",
           margin: "24px 0",
           boxShadow: "0 30px 60px -50px rgba(15,27,45,.25)",
-          scrollMarginTop: "80px",
         }}
       >
-        <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 40, alignItems: "start" }}>
+        <div className="layout-section-grid">
           <div>
             <div style={{ fontFamily: "var(--font-manrope)", fontWeight: 500, fontSize: 64, lineHeight: 1, letterSpacing: "-.02em", marginBottom: 14 }}>{num}</div>
             <h2 style={{ fontSize: 30, fontWeight: 900, lineHeight: 1.2, letterSpacing: ".01em", margin: 0 }}>{title}</h2>
@@ -49,6 +47,7 @@ export default function SectionShell({
             {ctaLabel && (
               <a
                 href={ctaHref}
+                {...(ctaExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 10,
                   padding: "11px 22px", borderRadius: 999,

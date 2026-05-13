@@ -33,7 +33,7 @@ export default function Hero() {
         <Image src="/assets/sparkle_green.png" alt="" width={36} height={36} />
       </motion.div>
 
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 32px", display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 30, alignItems: "start", position: "relative" }}>
+      <div className="layout-hero">
         {/* Left */}
         <div>
           <motion.div {...fade(0.1)} style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--ink-2)", fontWeight: 700, fontSize: 14, marginBottom: 14 }}>
@@ -86,7 +86,7 @@ export default function Hero() {
         </div>
 
         {/* Right */}
-        <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }} style={{ position: "relative", minHeight: 560 }}>
+        <motion.div className="hero-right-col" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }} style={{ position: "relative", minHeight: 560 }}>
           <div style={{ position: "absolute", inset: "-30px -10px 30px 0", backgroundImage: "url(/assets/blob_blue.png)", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", opacity: 0.95, zIndex: 0 }} />
           <div style={{ position: "relative", zIndex: 1, width: "100%", height: 520, background: "linear-gradient(180deg, oklch(95% .03 240), oklch(90% .05 200))", borderRadius: "50% 45% 55% 50% / 60% 50% 60% 50%", overflow: "hidden", display: "grid", placeItems: "end center", boxShadow: "inset 0 -40px 80px rgba(38,185,235,.15)" }}>
             <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", fontFamily: "var(--font-mono), monospace", fontSize: 12, letterSpacing: ".25em", color: "rgba(15,27,45,.28)", textAlign: "center", lineHeight: 1.7, border: "1px dashed rgba(15,27,45,.15)", padding: "10px 24px", borderRadius: 8 }}>PHOTO</div>
@@ -107,8 +107,14 @@ export default function Hero() {
               モットー：作るなら、妥協しない。
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 12, paddingTop: 12, borderTop: "1px solid var(--line)" }}>
-              {["G", "X", "in"].map((s, i) => (
-                <span key={s} style={{ width: 22, height: 22, borderRadius: 6, background: i === 2 ? "#0a66c2" : "var(--ink)", display: "grid", placeItems: "center", color: "#fff", fontSize: 11, fontWeight: 900 }}>{s}</span>
+              {[
+                { label: "G", href: "https://github.com/myfavoriteharuto-collab", bg: "var(--ink)" },
+                { label: "X", href: "https://x.com/myfuns101010", bg: "var(--ink)" },
+              ].map(({ label, href, bg }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                  style={{ width: 22, height: 22, borderRadius: 6, background: bg, display: "grid", placeItems: "center", color: "#fff", fontSize: 11, fontWeight: 900, textDecoration: "none" }}>
+                  {label}
+                </a>
               ))}
             </div>
           </motion.div>

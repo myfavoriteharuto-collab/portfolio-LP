@@ -64,10 +64,10 @@ export default function Contact() {
     <SectionShell
       id="contact" num="05" title="コンタクト" kicker="CONTACT"
       lead={<>インターン・業務委託・共同研究など、<br />お気軽にどうぞ。</>}
-      ctaLabel="Message Me" ctaVariant="blue"
+      ctaLabel="メールを送る" ctaHref="mailto:haruto.miyakawa.dev@gmail.com" ctaVariant="blue"
       sidebar={
         <div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18, alignItems: "stretch" }}>
+          <div className="layout-3col">
             {/* Email */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
