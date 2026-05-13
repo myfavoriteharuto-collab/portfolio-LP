@@ -20,6 +20,7 @@ const projects: Project[] = [
     period: "実稼働 約1週間（春休み集中開発）",
     team: "個人開発",
     status: "アルバイト先に提案中",
+    githubUrl: "https://github.com/myfavoriteharuto-collab/Guide-manual",
     screenshots: [
       { src: "/assets/kaden-admin.png", caption: "管理者向け管理画面：商品スペックを AI で自動収集・登録" },
       { src: "/assets/kaden-app.png", caption: "スタッフ向け iPad PWA：接客現場でリアルタイム比較・提案" },
@@ -38,6 +39,7 @@ const projects: Project[] = [
     period: "実稼働 約1週間",
     team: "個人開発",
     status: "個人運用中",
+    githubUrl: "https://github.com/myfavoriteharuto-collab/lecture-minutes",
   },
 ];
 
