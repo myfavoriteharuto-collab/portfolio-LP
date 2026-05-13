@@ -22,7 +22,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "Haruto Miyakawa | AI Engineer",
-  description: "爆速の実装力で、アイデアを価値に変える。AI Engineer / Researcher のポートフォリオ。",
+  description: "妥協なき創作のために、技術を磨く。AI Engineer / Creator / Researcher のポートフォリオ。",
 };
 
 export default function RootLayout({
