@@ -48,6 +48,7 @@ export default function Nav() {
             <a
               key={href}
               href={href}
+              onClick={href === "#top" ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } : undefined}
               style={{ position: "relative", padding: "6px 0", transition: "color .2s" }}
               onMouseEnter={e => {
                 e.currentTarget.style.color = "var(--blue-2)";
