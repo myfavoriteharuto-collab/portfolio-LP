@@ -4,18 +4,18 @@ import Image from "next/image";
 import SectionShell from "@/components/ui/SectionShell";
 
 const steps = [
-  { num: "01", icon: "💡", title: "アイデア発想", desc: "課題を発見し、AIと壁打ちして仮説を構築", tool: "ChatGPT / Claude" },
-  { num: "02", icon: "📐", title: "設計・計画", desc: "AIと要件整理・設計。実装タスクに分解", tool: "Notion AI / Miro AI" },
-  { num: "03", icon: "⌨️", title: "実装（爆速）", desc: "AIペアプロで高速実装。品質を保ちつつ量産", tool: "GitHub Copilot" },
-  { num: "04", icon: "📈", title: "検証・改善", desc: "AIでテスト・分析。データドリブンに改善", tool: "LangSmith / GPT-4o" },
-  { num: "05", icon: "🚀", title: "リリース・成長", desc: "素早くリリースし、ユーザーと共に成長", tool: "Vercel / Analytics" },
+  { num: "01", icon: "💡", title: "課題の発見", desc: "現場や日常の「これ不便」を見逃さず、解決すべき課題として定義する", tool: "Claude / 観察・メモ" },
+  { num: "02", icon: "📐", title: "設計・構造化", desc: "妥協点を作らないよう、ユーザー・技術・制約を整理して設計に落とす", tool: "Claude Code / Notion" },
+  { num: "03", icon: "⌨️", title: "実装・作り込み", desc: "Claude Codeとペアプロしながら、細部まで動作と品質にこだわって実装する", tool: "Claude Code / GitHub" },
+  { num: "04", icon: "📈", title: "検証・磨き込み", desc: "「これで十分」と思ってからもう一歩。ユーザー視点で使い続けて改善する", tool: "Claude / 実運用フィードバック" },
+  { num: "05", icon: "🚀", title: "リリース・継続", desc: "動くものを世に出し、実際に使われる中で課題を見つけ、また作り込む", tool: "Vercel / Supabase" },
 ];
 
 export default function Workflow() {
   return (
     <SectionShell
       id="workflow" num="03" title="AI共創ワークフロー" kicker="WORKFLOW"
-      lead={<>AIを"相棒"として、アイデアから<br />リリースまでを爆速で回す。</>}
+      lead={<>AIを"相棒"として、細部まで<br />妥協せず作り込む。</>}
       ctaLabel="View more" ctaVariant="blue"
       sidebar={
         <div>
@@ -57,7 +57,7 @@ export default function Workflow() {
               {["#ff5f57", "#febc2e", "#28c840"].map(c => <span key={c} style={{ width: 11, height: 11, borderRadius: "50%", background: c, display: "inline-block" }} />)}
             </div>
             <div style={{ flex: 1, letterSpacing: ".02em" }}>
-              <span style={{ color: "#7fdaf3" }}>AI</span> × <span style={{ color: "#7fdaf3" }}>Human</span> = <span style={{ color: "#a486ff", fontWeight: 700, margin: "0 4px" }}>∞</span> の可能性を、プロダクトと研究で証明する。
+              <span style={{ color: "#7fdaf3" }}>AI</span> × <span style={{ color: "#7fdaf3" }}>Human</span> = <span style={{ color: "#a486ff", fontWeight: 700, margin: "0 4px" }}>妥協なき創作</span>を、現実に変える。
             </div>
             <div style={{ color: "#7c8aa3", flexShrink: 0 }}>{"< >"}</div>
           </motion.div>
