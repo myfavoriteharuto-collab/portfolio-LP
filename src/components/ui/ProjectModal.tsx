@@ -7,10 +7,13 @@ export interface Project {
   tag: string;
   tagColor: "b" | "g" | "o";
   title: string;
+  subtitle?: string;
   desc: string;
   chips: { label: string; variant?: string }[];
   period: string;
   team: string;
+  status?: string;
+  screenshots?: { src: string; caption: string }[];
   githubUrl?: string;
   detailUrl?: string;
 }
@@ -84,8 +87,11 @@ export default function ProjectModal({ project, onClose }: Props) {
                 {project.tag}
               </div>
 
-              <h2 style={{ margin: "0 0 12px", fontSize: 24, fontWeight: 900, letterSpacing: ".01em" }}>{project.title}</h2>
-              <p style={{ margin: "0 0 20px", fontSize: 14, lineHeight: 1.9, color: "var(--ink-2)" }}>{project.desc}</p>
+              <h2 style={{ margin: "0 0 6px", fontSize: 24, fontWeight: 900, letterSpacing: ".01em" }}>{project.title}</h2>
+              {project.subtitle && (
+                <p style={{ margin: "0 0 12px", fontSize: 13, color: "var(--blue)", fontWeight: 700 }}>{project.subtitle}</p>
+              )}
+              <p style={{ margin: "0 0 20px", fontSize: 14, lineHeight: 1.9, color: "var(--ink-2)", whiteSpace: "pre-line" }}>{project.desc}</p>
 
               {/* Tech chips */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
@@ -95,9 +101,10 @@ export default function ProjectModal({ project, onClose }: Props) {
               </div>
 
               {/* Meta */}
-              <div style={{ display: "flex", gap: 24, padding: "16px 0", borderTop: "1px dashed var(--line)", borderBottom: "1px dashed var(--line)", fontSize: 12.5, color: "var(--ink-2)", marginBottom: 24 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 16, padding: "16px 0", borderTop: "1px dashed var(--line)", borderBottom: "1px dashed var(--line)", fontSize: 12.5, color: "var(--ink-2)", marginBottom: 24 }}>
                 <span>開発期間：<strong style={{ color: "var(--ink)" }}>{project.period}</strong></span>
                 <span>チーム：<strong style={{ color: "var(--ink)" }}>{project.team}</strong></span>
+                {project.status && <span>ステータス：<strong style={{ color: "var(--ink)" }}>{project.status}</strong></span>}
               </div>
 
               {/* Actions */}
